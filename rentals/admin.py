@@ -14,6 +14,7 @@ class RentalPropertyAdmin(admin.ModelAdmin):
         'bathrooms',
         'tenant_name',
         'tenant_phone',
+        'monthly_rent',
         'property_type',
     )
     

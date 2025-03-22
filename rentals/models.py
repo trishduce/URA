@@ -17,6 +17,7 @@ class RentalProperty(models.Model):
     city = models.CharField(max_length=50, default='Missoula')  
     state = models.CharField(max_length=10, default='MT')
     zip_code = models.CharField(max_length=10, default='59801')
+    monthly_rent = models.IntegerField(max_length=10, default=0)
     property_type = models.CharField(
             max_length=20,
             choices=PROPERTY_TYPES,
