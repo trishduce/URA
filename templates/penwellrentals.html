@@ -7,7 +7,6 @@
             <thead>
                <tr>
                   <th>Apt Number</th>
-                  <th>Availabilty</th>
                   <th>Tenant Name</th>
                   <th>Tenant Phone</th>
                </tr>
@@ -17,7 +16,6 @@
                  {% if property.property_type == "penwell" %}
                      <tr>
                         <td><a href="{% url 'penwell_detail' property.pk %}" >{{ property.apt_number }}</a></td>
-                        <td>{{ property.is_available }}</td>
                         <td>{{ property.tenant_name }}</td>
                         <td>{{ property.tenant_phone }}</td>
                      </tr>

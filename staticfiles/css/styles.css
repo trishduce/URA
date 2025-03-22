@@ -70,7 +70,7 @@
 
 /* Logout h3 heading */
 .logout-container h3 {     
-    color: #333;
+    color: #000000;
     font-size: 12px;
 }
 
@@ -208,79 +208,49 @@ body {
          background-color: #d4edda;
       } /* Light green */
 
- /* Responsive design */
- @media (max-width: 700px) {
-.container {
-            flex-direction: column;
-            align-items: center;
-            width: 90%
-         }
- .small-card {
-            align-self: center;
-         }
- .card-wrapper {
-            flex-wrap: wrap;
-         }
-  table, thead, tbody, th, td, tr {
-    display: block;
-  }
+ 
 
-  th {
-    background-color: #f9f9f9;
-  }
-
-  td {
-    text-align: right;
-    position: relative;
-    padding-left: 50%;
-  }
-
-  td::before {
-    content: attr(data-label); /* Needs data-label attributes on <td> */
-    position: absolute;
-    left: 15px;
-    top: 15px;
-    font-weight: bold;
-    text-align: left;
-  }
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Important: keeps corners from overflowing */
 }
 
+th {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+  background-color: #3a6073;
+  color: white;
+  box-sizing: border-box;
+}
 
- th {
-         background-color: #3a6073;
-         color: white;
-         padding: 10px;
-      }
+td {
+  box-sizing: border-box;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+} 
 
- table {
-         width: 100%;
-         border-collapse: collapse; /* Ensures table borders are connected */
-         margin-top: 0; /* Removes extra spacing above the table */
-         background: white;
-         border-radius: 8px;
-         overflow: hidden;
-         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
+/* Add border-radius to first and last th in the first row */
+thead tr:first-child th:first-child {
+  border-top-left-radius: 8px;
+}
 
- th, td {
-         padding: 15px;
-         border-bottom: 1px solid #ddd;
-         text-align: left;
-         word-wrap: break-word; /* Allows text to wrap within the cell */
-         overflow-wrap: break-word;
-      }
+thead tr:first-child th:last-child {
+  border-top-right-radius: 8px;
+}
 
- 
-td:nth-child(3) {
-         /* Description Column */
-         white-space: pre-wrap; /* Ensures line breaks and wrapping */
-         word-break: break-word; /* Breaks long words */
-         max-width: 55%; /* Ensures description does not overflow */
-         overflow: hidden; /* Prevents horizontal scrolling */
-         text-align: left; /* Aligns text properly */
-         line-height: 1.5;
-      }
- 
 
  .maintenance-button {
          display: inline-block;

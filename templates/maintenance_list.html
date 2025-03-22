@@ -11,8 +11,6 @@
                <tr>
                   <th>Urgency</th>
                   <th>Property</th>
-                  <th>Date Reported</th>
-                  
                   <th>Description</th>
                </tr>
             </thead>
@@ -22,8 +20,6 @@
                   <tr>
                      <td>{{ maintenance.urgency }}</td>
                      <td><a href="{% url 'maintenance_detail' maintenance.pk %}">{{ maintenance.property }}</a></td>
-                     <td>{{ maintenance.date_reported|date:"Y-m-d" }}</td>
-                    
                      <td>{{ maintenance.description }}</td>
                   
                   </tr>
@@ -41,8 +37,6 @@
                <tr>
                   <th>Urgency</th>
                   <th>Property</th>
-                  <th>Date Reported</th>
-                  
                   <th>Description</th>
                </tr>
             </thead>
@@ -52,8 +46,6 @@
                      <tr>
                         <td>{{ maintenance.urgency }}</td>
                         <td><a href="{% url 'maintenance_detail' maintenance.pk %}">{{ maintenance.property }}</a></td>
-                        <td>{{ maintenance.date_reported|date:"Y-m-d" }}</td>
-                        
                         <td>{{ maintenance.description }}</td>
                         
                      </tr>
