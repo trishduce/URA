@@ -3,23 +3,16 @@
    {% block content %} 
    {% if user.is_authenticated %}
    <div class="container">
-      <div class="card-wrapper">
-         <!-- Left side: Two stacked large cards -->
-         <div class="left-container">
+      <div class = card-wrapper>
             <a href="{% url 'penwell_list' %}" class="card-link">
-               <div class="card large-card">
+               <div class="card small-card">
                   <h3 class="card-title">Penwell Building</h3>
                </div></a>
-            
             <a href="{% url 'residential_list' %}" class="card-link">
-               <div class="card large-card">
+               <div class="card small-card">
                   <h3 class="card-title">Residential Properties</h3>
                </div>
             </a>
-         </div>
-
-         <!-- Right side: Three smaller cards -->
-         <div class="right-container">
             <a href="{% url 'bill_list' %}" class="card-link">
                <div class="card small-card">
                   <h3 class="card-title">Bills</h3>
@@ -35,8 +28,7 @@
                   <h3 class="card-title">Maintenance</h3>
                </div>
             </a>
-         </div>
-      </div>
+            </div>
    </div>
 <!-- Pending Maintenance Requests -->
 <div class="container">

@@ -2,12 +2,21 @@
 {% block title %}URA Bills{% endblock title %} 
 {% block content %} 
       <div class="container">
-         <h2 style = "margin: 0"><strong>{{ object.name }}</strong></h2>
+        <table>
+          <thead>
+             <tr>
+         <th> {{ object.name }}</th>
+              </tr>
+          </thead>
+          <tbody><tr><td>
                   <p style = "margin: 0"><strong>Phone:</strong> {{ object.phone }}</p>
                   <p style = "margin: 0"><strong>Website:</strong> {{ object.website }}</p>
                   <p style = "margin: 0"><strong>Account Number:</strong> {{ object.account_number }}</p>
                   <p style = "margin: 0"><strong>Autopay:</strong> {{ object.autopay }}</p>
                   <p style = "margin: 0"><strong>Username:</strong> {{ object.username }}</p>
+                 </td> </tr></tbody>
+
+        </table>
                  <p></p> <button onclick="window.history.back()" style="background:none;border:none;cursor:pointer;">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />

@@ -169,42 +169,17 @@ body {
       }
  .card-wrapper {
          display: flex;
-         justify-content: space-between; /* Ensures left and right containers are side by side */
-         align-items: flex-start; /* Aligns them at the top */
+	 flex-direction: column; 
+         align-items: center; 
          width: 100%;
          gap: 10px; /* Adds spacing between left and right sections */
       }
 
- .left-container {
-         display: flex;
-         flex-direction: column; /* Stack the large cards vertically */
-         gap: 10px;
-         width: 65%;
-         margin: 0; /* Adjust width to ensure a balanced layout */
-      }
 
- .right-container {
-         display: flex;
-         flex-direction: column; /* Stack small cards vertically */
-         gap: 10px;
-         width: 30%; /* Makes the right container smaller than the left */
-         align-items: flex-start;
-         margin: 0; /* Aligns small cards to the left inside the right container */
-      }
-
- .left-container,
- .right-container {
-         width: 100%; /* Make both containers full width on smaller screens */
-      }
-
- .large-card {
-         width: 450px;
-         height: 42px;
-      }
+ 
  .small-card {
          width: 450px;
          height: 10px;
-         align-self: flex-start;
       }
  .card-link {
          text-decoration: none;
@@ -239,10 +214,6 @@ body {
          }
  .card-wrapper {
             flex-wrap: wrap;
-         }
- .left-container,
- .right-container {
-            width: 100%;
          }
       }
 
@@ -281,7 +252,7 @@ body {
          display: inline-block;
          margin-top: 20px;
          padding: 10px 20px;
-         background-color: #3a6073; /* Match header color */
+         background-color: #c59f8c; /* Match header color */
          color: #f7fff7; /* Light cream for contrast */
          text-decoration: none;
          border-radius: 5px;

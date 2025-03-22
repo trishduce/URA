@@ -215,6 +215,10 @@ body {
  .card-wrapper {
             flex-wrap: wrap;
          }
+ .left-container,
+ .right-container {
+            width: 100%;
+         }
       }
 
  
@@ -252,7 +256,7 @@ body {
          display: inline-block;
          margin-top: 20px;
          padding: 10px 20px;
-         background-color: #c59f8c; /* Match header color */
+         background-color: #3a6073; /* Match header color */
          color: #f7fff7; /* Light cream for contrast */
          text-decoration: none;
          border-radius: 5px;
