@@ -1,0 +1,22 @@
+{% extends "base.html" %} 
+{% block title %}Residential Properties{% endblock title %} 
+{% block content %} 
+      <div class="container">
+         <h2>{{ object.street_address }}</h2>
+         <p style = "margin: 0"><strong>Is Available:</strong> {{ object.is_available }}</p>
+         <p style = "margin: 0"><strong>Tenant Name:</strong> {{ object.tenant_name }}</p>
+         <p style = "margin: 0"><strong>Tenant Phone:</strong> {{ object.tenant_phone }}</p>
+         <p style = "margin: 0"><strong>Street Address:</strong> {{ object.street_address }}</p>
+         <p style = "margin: 0"><strong>City:</strong> {{ object.city }}</p>
+         <p style = "margin: 0"><strong>State:</strong> {{ object.state }}</p>
+         <p style = "margin: 0"><strong>Zip:</strong> {{ object.zip_code }}</p>
+         <p style = "margin: 0"><strong>Bathrooms:</strong> {{ object.bathrooms }}</p>
+         <p></p>
+         <button onclick="window.history.back()" style="background:none;border:none;cursor:pointer;">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back
+          </button>
+      </div>
+{% endblock content %}

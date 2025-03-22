@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}URA Maintenance{% endblock title %} 
+{% block content %}
+<div class="container">
+<h2>New Maintenance Request</h2>
+<form action="" method="post" style="text-align: left;">{% csrf_token %}
+    {{ form | crispy }}
+    <button class= "edit-button" type="submit">Save</button>
+    </form>
+    <button onclick="window.history.back()" style="background:none;border:none;cursor:pointer;">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back
+      </button>
+</div>
+{% endblock content %}

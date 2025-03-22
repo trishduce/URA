@@ -1,0 +1,38 @@
+{% extends "base.html" %} 
+{% block title %}Residential Properties{% endblock title %} 
+{% block content %} 
+      
+      <div class="container">
+         <h1>Residential Properties</h1>
+         <table>
+            <thead>
+               <tr>
+                  <th>Street Address</th>
+                  <th>Availabilty</th>
+                  <th>Tenant Name</th>
+                  <th>Tenant Phone</th>
+               </tr>
+            </thead>
+            <tbody>
+               {% for property in object_list %} 
+                 {% if property.property_type == "residential" %}
+                     <tr>
+                        <td><a href="{% url 'residential_detail' property.pk %}">{{ property.street_address }}</a></td>
+                        <td>{{ property.is_available }}</td>
+                        <td>{{ property.tenant_name }}</td>
+                        <td>{{ property.tenant_phone }}</td>
+
+                     </tr>
+               {% endif %} {% endfor %}
+            </tbody>
+         </table>
+         <p></p>
+         <button onclick="window.history.back()" style="background:none;border:none;cursor:pointer;">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back
+          </button>
+      </div>
+      {% endblock content %}
+

@@ -1,0 +1,74 @@
+{% extends "base.html" %} 
+{% block title %}Penwell Properties{% endblock title %} 
+{% block content %} 
+      <!-- Pending Maintenance Requests -->
+      <div class="container">
+         
+         <a href="{% url 'maintenance_new' %}"><button class = "maintenance-button">Submit Maintenance Request</button></a>
+        <p></p> <h1>Pending Maintenance Requests</h1>
+         <table>
+            <thead>
+               <tr>
+                  <th>Urgency</th>
+                  <th>Property</th>
+                  <th>Date Reported</th>
+                  
+                  <th>Description</th>
+               </tr>
+            </thead>
+            <tbody>
+               {% for maintenance in object_list %}
+                 {% if maintenance.pending == True %}
+                  <tr>
+                     <td>{{ maintenance.urgency }}</td>
+                     <td><a href="{% url 'maintenance_detail' maintenance.pk %}">{{ maintenance.property }}</a></td>
+                     <td>{{ maintenance.date_reported|date:"Y-m-d" }}</td>
+                    
+                     <td>{{ maintenance.description }}</td>
+                  
+                  </tr>
+                  {% endif %}
+               {% endfor %}
+            </tbody>
+         </table>
+      </div>
+
+      <!-- Maintenance History -->
+      <div class="container">
+         <h1>Maintenance History</h1>
+         <table>
+            <thead>
+               <tr>
+                  <th>Urgency</th>
+                  <th>Property</th>
+                  <th>Date Reported</th>
+                  
+                  <th>Description</th>
+               </tr>
+            </thead>
+            <tbody>
+               {% for maintenance in object_list %}
+                   {% if maintenance.pending == False %}
+                     <tr>
+                        <td>{{ maintenance.urgency }}</td>
+                        <td><a href="{% url 'maintenance_detail' maintenance.pk %}">{{ maintenance.property }}</a></td>
+                        <td>{{ maintenance.date_reported|date:"Y-m-d" }}</td>
+                        
+                        <td>{{ maintenance.description }}</td>
+                        
+                     </tr>
+                  {% endif %}
+            
+               {% endfor %}
+            </tbody>
+         </table>
+         <p>     
+         </p>
+         <button onclick="window.history.back()" style="background:none;border:none;cursor:pointer;">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back
+          </button>
+      </div>
+      {% endblock content %}
