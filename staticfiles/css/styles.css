@@ -271,7 +271,15 @@ body {
       }
 
  
-
+td:nth-child(3) {
+         /* Description Column */
+         white-space: pre-wrap; /* Ensures line breaks and wrapping */
+         word-break: break-word; /* Breaks long words */
+         max-width: 55%; /* Ensures description does not overflow */
+         overflow: hidden; /* Prevents horizontal scrolling */
+         text-align: left; /* Aligns text properly */
+         line-height: 1.5;
+      }
  
 
  .maintenance-button {
