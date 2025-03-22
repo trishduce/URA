@@ -16,6 +16,7 @@ class RentalPropertyAdmin(admin.ModelAdmin):
         'tenant_phone',
         'monthly_rent',
         'property_type',
+        'notes',
     )
     
 admin.site.register(RentalProperty, RentalPropertyAdmin) 

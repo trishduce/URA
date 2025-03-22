@@ -6,10 +6,12 @@ from .models import Maintenance
 class MaintenanceListView(ListView):
   model = Maintenance
   template_name = 'maintenance_list.html'
+  ordering = ['urgency']
   
 class HomeView(ListView):
   model = Maintenance
   template_name = 'home.html'
+  ordering = ['urgency']
   
 class MaintenanceDetailView(DetailView):
   model = Maintenance

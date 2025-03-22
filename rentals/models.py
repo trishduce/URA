@@ -23,6 +23,7 @@ class RentalProperty(models.Model):
             choices=PROPERTY_TYPES,
             default='residential'  # Default to 'residential' to avoid migration issues
         )
+    notes = models.TextField(default='')
 
     def __str__(self):
         return self.apt_number

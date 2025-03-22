@@ -7,7 +7,6 @@ class Maintenance(models.Model):
 
     URGENCY_CHOICES = [
         ('Low', 'Low'),
-        ('Medium', 'Medium'),
         ('High', 'High'),
     ]
 
