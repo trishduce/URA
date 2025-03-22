@@ -178,7 +178,10 @@ body {
 
  
  .small-card {
-         width: 450px;
+         white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+         width: 300px;
          height: 10px;
       }
  .card-link {
