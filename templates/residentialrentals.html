@@ -8,9 +8,6 @@
             <thead>
                <tr>
                   <th>Street Address</th>
-                  <th>Availabilty</th>
-                  <th>Tenant Name</th>
-                  <th>Tenant Phone</th>
                </tr>
             </thead>
             <tbody>
@@ -18,9 +15,6 @@
                  {% if property.property_type == "residential" %}
                      <tr>
                         <td><a href="{% url 'residential_detail' property.pk %}">{{ property.street_address }}</a></td>
-                        <td>{{ property.is_available }}</td>
-                        <td>{{ property.tenant_name }}</td>
-                        <td>{{ property.tenant_phone }}</td>
 
                      </tr>
                {% endif %} {% endfor %}

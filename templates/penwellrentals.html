@@ -48,14 +48,12 @@
             <thead>
                <tr>
                   <th>Name</th>
-                  <th>Availabilty</th>
                </tr>
             </thead>
             <tbody>
                {% for property in object_list %}{% if property.property_type == "commercial" %}
                <tr>
                   <td><a href="{% url 'penwell_detail' property.pk %}" >{{ property.apt_number }}</a></td>
-                  <td><a href="{% url 'penwell_detail' property.pk %}" >{{ property.is_available }}</a></td>
                </tr>
                {% endif %}{% endfor %}
             </tbody>

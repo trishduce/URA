@@ -36,18 +36,18 @@
    <table>
       <thead>
          <tr>
-            <th>Urgency</th>
-            <th>Property</th>
-            <th>Description</th>
+            <th style = "width: 20%">Urgency</th>
+            <th style = "width: 30%">Property</th>
+            <th style = "width: 50%">Description</th>
          </tr>
       </thead>
       <tbody>
          {% for maintenance in object_list %}
            {% if maintenance.pending == True %}
             <tr>
-               <td>{{ maintenance.urgency }}</td>
-               <td><a href="{% url 'maintenance_detail' maintenance.pk %}">{{ maintenance.property }}</a></td>
-               <td>{{ maintenance.description }}</td>
+               <td style = "width: 20%">{{ maintenance.urgency }}</td>
+               <td style = "width: 30%"><a href="{% url 'maintenance_detail' maintenance.pk %}">{{ maintenance.property }}</a></td>
+               <td style = "width: 50%">{{ maintenance.description }}</td>
             </tr>
             {% endif %}
          {% endfor %}
