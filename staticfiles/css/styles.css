@@ -151,6 +151,7 @@ body {
          padding: 40px;
          width: 90%;
          max-width: 700px; 
+         overflow-x: hidden; 
          margin: auto;
          flex-direction: column;
       }
@@ -209,7 +210,7 @@ body {
 
  /* Responsive design */
  @media (max-width: 700px) {
- .container {
+.container {
             flex-direction: column;
             align-items: center;
             width: 90%
@@ -220,9 +221,29 @@ body {
  .card-wrapper {
             flex-wrap: wrap;
          }
-      }
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
 
- 
+  th {
+    background-color: #f9f9f9;
+  }
+
+  td {
+    text-align: right;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td::before {
+    content: attr(data-label); /* Needs data-label attributes on <td> */
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+}
 
 
  th {
