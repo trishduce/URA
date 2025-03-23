@@ -19,5 +19,6 @@ class RentalPropertyAdmin(admin.ModelAdmin):
         'property_type',
         'notes',
     )
+    list_display_links = ('name', 'apt_numb') 
     
 admin.site.register(RentalProperty, RentalPropertyAdmin) 
