@@ -5,8 +5,8 @@ from .models import RentalProperty
 
 class RentalPropertyAdmin(admin.ModelAdmin):
     list_display = (
-        #'name',
-       # 'apt_numb',
+        'name',
+        'apt_number',
         'street_address',
         'city',
         'state',
