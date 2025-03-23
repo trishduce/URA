@@ -48,8 +48,8 @@
                {% else %}
                <tr>
                {% endif %}            
-               <td style = "width: 30%"><a href="{% url 'maintenance_detail' maintenance.pk %}">{{ maintenance.property }}</a></td>
-               <td style = "width: 50%">{{ maintenance.description }}</td>
+               <td style = "width: 40%"><a href="{% url 'maintenance_detail' maintenance.pk %}">{{ maintenance.property }}</a></td>
+               <td style = "width: 60%">{{ maintenance.description }}</td>
             </tr>
             {% endif %}
          {% endfor %}

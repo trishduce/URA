@@ -9,18 +9,20 @@
          <table>
             <thead>
                <tr>
-                  <th style = "width: 20%">Urgency</th>
-                  <th style = "width: 30%">Property</th>
-                  <th style = "width: 50%">Description</th>
+                  <th style = "width: 40%">Property</th>
+                  <th style = "width: 60%">Description</th>
                </tr>
             </thead>
             <tbody>
                {% for maintenance in object_list %}
                  {% if maintenance.pending == True %}
-                  <tr>
-                     <td style = "width: 20%">{{ maintenance.urgency }}</td>
-                     <td style = "width: 30%"><a href="{% url 'maintenance_detail' maintenance.pk %}">{{ maintenance.property }}</a></td>
-                     <td style = "width: 50%">{{ maintenance.description }}</td>
+                   {% if maintenance.urgency == 'High' %} 
+                     <tr style="background-color: #fef2f2;">
+                   {% else %}
+                      <tr>
+                   {% endif %} 
+                     <td style = "width: 40%"><a href="{% url 'maintenance_detail' maintenance.pk %}">{{ maintenance.property }}</a></td>
+                     <td style = "width: 60%">{{ maintenance.description }}</td>
                   
                   </tr>
                   {% endif %}
@@ -35,18 +37,20 @@
          <table>
             <thead>
                <tr>
-                  <th style = "width: 20%">Urgency</th>
-                  <th style = "width: 30%">Property</th>
-                  <th style = "width: 50%">Description</th>
+                  <th style = "width: 40%">Property</th>
+                  <th style = "width: 60%">Description</th>
                </tr>
             </thead>
             <tbody>
                {% for maintenance in object_list %}
                    {% if maintenance.pending == False %}
-                     <tr>
-                        <td style = "width: 20%">{{ maintenance.urgency }}</td>
-                        <td style = "width: 30%"><a href="{% url 'maintenance_detail' maintenance.pk %}">{{ maintenance.property }}</a></td>
-                        <td style = "width: 50%">{{ maintenance.description }}</td>
+                     {% if maintenance.urgency == 'High' %} 
+                       <tr style="background-color: #fef2f2;">
+                      {% else %}
+                        <tr>
+                      {% endif %} 
+                        <td style = "width: 40%"><a href="{% url 'maintenance_detail' maintenance.pk %}">{{ maintenance.property }}</a></td>
+                        <td style = "width: 60%">{{ maintenance.description }}</td>
                         
                      </tr>
                   {% endif %}
