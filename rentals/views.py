@@ -4,12 +4,12 @@ from .models import RentalProperty
 class ResidentialListView(ListView):
   model = RentalProperty
   template_name = "residentialrentals.html"
-  ordering = ['apt_number']
+  ordering = ['name']
   
 class PenwellListView(ListView):
   model = RentalProperty
   template_name = "penwellrentals.html"
-  ordering = ['apt_number']
+  ordering = ['apt_numb']
   
 class ResidentialDetailView(DetailView):
   model = RentalProperty
