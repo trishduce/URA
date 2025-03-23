@@ -8,8 +8,7 @@ class RentalProperty(models.Model):
         ('airbnb', 'Airbnb'),
         ('commercial', 'Commercial')
     ]
-    name = models.CharField(max_length=30, null=True, blank=True) 
-    apt_numb = models.IntegerField(default=0)  # Apartment number 
+    apt_number = models.CharField(max_length=20) 
     street_address = models.CharField(max_length=100, default='107 South 3rd Street West')  # Property address
     is_available = models.BooleanField(default=False)
     tenant_name = models.CharField(max_length=255, null=True, blank=True)
@@ -18,16 +17,13 @@ class RentalProperty(models.Model):
     city = models.CharField(max_length=50, default='Missoula')  
     state = models.CharField(max_length=10, default='MT')
     zip_code = models.CharField(max_length=10, default='59801')
-    monthly_rent = models.IntegerField(default=0)
+    monthly_rent = models.IntegerField(max_length=10, default=0)
     property_type = models.CharField(
             max_length=20,
             choices=PROPERTY_TYPES,
             default='residential'  # Default to 'residential' to avoid migration issues
         )
-    notes = models.TextField(default='', null=True, blank=True)
+    notes = models.TextField(default='')
 
     def __str__(self):
-        if self.apt_numb > 0:
-            return str(self.apt_numb)
-        else:
-            return self.name
+        return self.apt_number
