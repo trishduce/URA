@@ -9,7 +9,7 @@ class RentalProperty(models.Model):
         ('commercial', 'Commercial')
     ]
     name = models.CharField(max_length=20, null=True, blank=True)
-    apt_number = models.CharField(max_length=20, null=True, blank=True)
+    apt_numb = models.IntegerField(default=0)
     street_address = models.CharField(max_length=100, default='107 South 3rd Street West')  # Property address
     is_available = models.BooleanField(default=False)
     tenant_name = models.CharField(max_length=255, null=True, blank=True)
@@ -24,7 +24,10 @@ class RentalProperty(models.Model):
             choices=PROPERTY_TYPES,
             default='residential'  # Default to 'residential' to avoid migration issues
         )
-    notes = models.TextField(default='')
+    notes = models.TextField(default='', null=True, blank=True)
 
     def __str__(self):
-        return self.apt_number
+        if self.apt_numb > 0:
+            return str(self.apt_numb)
+        else:
+            return self.name
