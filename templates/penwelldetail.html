@@ -5,7 +5,9 @@
         <table>
           <thead>
              <tr>
-         <th> {{ object.apt_number }}</th>
+         <th> {% if object.apt_number > 0 %}{{ object.apt_number }}
+          {% else %}{{ object.name }}{% endif %}
+         </th>
               </tr>
           </thead>
           <tbody><tr><td>
